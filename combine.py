@@ -3,7 +3,8 @@ import PyPDF2
 
 def combine_pdfs(folder_path, output_file):
     pdf_files = [file for file in os.listdir(folder_path) if file.endswith('.pdf')]
-    
+    pdf_files = sorted(pdf_files)
+    print(pdf_files)
     writer = PyPDF2.PdfWriter()
     
     for file in pdf_files:
@@ -12,7 +13,6 @@ def combine_pdfs(folder_path, output_file):
             reader = PyPDF2.PdfReader(pdf)
             for page in range(len(reader.pages)):
                 writer.add_page(reader.pages[page])
-    
     with open(output_file, 'wb') as output:
         writer.write(output)
 
