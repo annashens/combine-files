@@ -17,7 +17,7 @@ def combine_pdfs(folder_path, output_file):
         writer.write(output)
 
 # Example usage
-file_name = 'ENGL306A_Module_12'
+file_name = 'ENGL306A_Module_2'
 folder_path = 'input_files/' + file_name
 output_file = 'output_files/{}.pdf'.format(file_name)
 combine_pdfs(folder_path, output_file)
